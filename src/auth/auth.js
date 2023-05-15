@@ -17,7 +17,7 @@ export const UserProvider = ({ children }) => {
                 password: password
             });
 
-            const expirationTime =  86400 * 1000; // 20 minutes in milliseconds
+            const expirationTime =  86400 * 1000; 
         const expirationDate = new Date(Date.now() + expirationTime);
             
         setCookies('token', res.data.token, {
