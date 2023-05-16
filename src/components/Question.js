@@ -23,7 +23,7 @@ const Question = ()=>{
 
         axios.get(`${BASE_URL}/question/${params.id}`,  {
             headers: {
-                Authorization : `Bhushan ${cookies.token}`,
+                Authorization : `Bearer ${cookies.token}`,
             }}).then(function (response) {
         
         if(response.data.error == 'access denied'){
@@ -31,8 +31,8 @@ const Question = ()=>{
             removeCookie('progress');
             navigate('/');
         }
-
-    
+        // console.log("any question");
+        // console.log(response.data);
         setQuestion(response.data);
     });
     },[params])
